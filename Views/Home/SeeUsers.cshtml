@@ -1,0 +1,12 @@
+﻿@model List<User> 
+
+
+<h1>List of Users</h1>
+
+<ol>
+    @foreach(var user in Model)
+    {
+        <li> @user.FirstName  @user.LastName</li>
+        
+    }
+</ol>

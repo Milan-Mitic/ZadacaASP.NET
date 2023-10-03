@@ -1,0 +1,26 @@
+﻿@model List<PizzaViewModel>
+
+
+<h1>Pizza Menu</h1>
+
+<ol>
+    @foreach(var pizza in Model)
+    {
+        <li>
+            <p>PizzaID: @pizza.Id</p>
+            <p>PizzaName: @pizza.Name</p>
+            <p>PizzaPrice: @pizza.Price</p>
+            <p>PizzaSize: @pizza.PizzaSize</p>
+        </li>
+    }
+</ol>
+
+<br />
+<hr />
+
+<h1>Partial View</h1>
+
+@foreach(var pizza in Model)
+{
+    @Html.Partial("_PizzaDetails", pizza)
+}

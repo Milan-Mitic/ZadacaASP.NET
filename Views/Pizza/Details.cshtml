@@ -1,0 +1,45 @@
+﻿@model PizzaViewModel
+
+<h1 style="color:blue">Pizza Menu</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>PizzaID</th>
+            <th>PizzaName</th>
+            <th>PizzaPrice</th>
+            <th>PizzaSize</th>
+            <th>HasExtras</th>
+            <th>IsOnPromotion</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.Id</td>
+            <td>@Model.Name</td>
+            <td>@Model.Price</td>
+            <td>@Model.PizzaSize</td>
+            <td>@Model.HasExtras</td>
+            <td style="color:green">@if(Model.IsOnPromotion)
+                {
+                    <h4>This pizza is on promotion</h4>
+                }
+                else
+                {
+                    <h4 style="color:red">This pizza is not on promotion</h4>
+                }
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<br />
+<br />
+<hr />
+
+<h1>Partial View</h1>
+
+@Html.Partial("_PizzaDetails", Model)
+
+
+
